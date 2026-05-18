@@ -24,14 +24,18 @@
 <body>
 <div class="info-block">
         <h2>Расписание поездки</h2>
-        <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse;">
+        <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%;">
             <thead>
                 <tr>
-                    <th>День недели</th>
-                    <th>Посадка (МСК)</th>
-                    <th>Отправление (МСК)</th>
-                    <th>Посадка (сервер)</th>
-                    <th>Отправление (Сервер)</th>
+                    <th rowspan="2">День недели</th>
+                    <th colspan="2">МСК</th>
+                    <th colspan="2">Сервер</th>
+                </tr>
+                <tr>
+                    <th>Посадка</th>
+                    <th>Отправление</th>
+                    <th>Посадка</th>
+                    <th>Отправление</th>
                 </tr>
             </thead>
             <tbody>
