@@ -36,8 +36,8 @@
             border-radius: 0 0 5px 5px;
             display: none;
         }
-        .thursday-row {
-            background-color: #ffcccc; /* Light red color */
+        .today-row {
+            background-color: #ffeb3b; /* Yellow highlight for today */
         }
         .spoiler.open .spoiler-content {
             display: block;
@@ -58,37 +58,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr id="monday-row">
                             <td>Понедельник <br>Monday</td>
                             <td>19:00 → 23:00</td>
                             <td>15:00 → 19:00</td>
                         </tr>
-                        <tr>
+                        <tr id="tuesday-row">
                             <td>Вторник <br>Tuesday</td>
                             <td>19:00 → 23:00</td>
                             <td>15:00 → 19:00</td>
                         </tr>
-                        <tr>
+                        <tr id="wednesday-row">
                             <td>Среда <br> Wednesday</td>
                             <td>19:00 → 23:00</td>
                             <td>15:00 → 19:00</td>
                         </tr>
-                        <tr class="thursday-row">
+                        <tr id="thursday-row">
                             <td>Четверг <br>Thursday</td>
                             <td>14:00 → 18:00</td>
                             <td>09:00 → 13:00</td>
                         </tr>
-                        <tr>
+                        <tr id="friday-row">
                             <td>Пятница <br>Friday</td>
                             <td>19:00 → 23:00</td>
                             <td>15:00 → 19:00</td>
                         </tr>
-                        <tr>
+                        <tr id="saturday-row">
                             <td>Суббота <br>Saturday</td>
                             <td>19:00 → 23:00</td>
                             <td>15:00 → 19:00</td>
                         </tr>
-                        <tr>
+                        <tr id="sunday-row">
                             <td>Воскресенье <br> Sunday </td>
                             <td>19:00 → 23:00</td>
                             <td>15:00 → 19:00</td>
@@ -135,6 +135,23 @@
                     spoiler.classList.toggle('open');
                 });
             });
+            
+            // Highlight today's row
+            const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+            const today = new Date().getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+            const todayKey = days[today];
+            
+            // Remove previous highlight
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                row.classList.remove('today-row');
+            });
+            
+            // Add highlight to today's row
+            const todayRow = document.getElementById(todayKey + '-row');
+            if (todayRow) {
+                todayRow.classList.add('today-row');
+            }
         });
     </script>
 </body>
