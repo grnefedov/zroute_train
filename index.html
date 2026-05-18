@@ -19,77 +19,120 @@
             height: 1000px; 
             border: none; 
         } 
+        .spoiler {
+            margin: 10px 0;
+        }
+        .spoiler-header {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .spoiler-content {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+            display: none;
+        }
+        .spoiler.open .spoiler-content {
+            display: block;
+        }
     </style>
 </head>
 <body>
 <div class="info-block">
-        <h2>Расписание поездки</h2>
-        <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%;">
-            <thead>
-                <tr>
-                    <th>День недели // Weekday</th>
-                    <th>Moscow time <br>Посадка (boarding) → Отправление (departure)</th>
-                    <th>Server Time <br>Посадка (boarding) → Отправление (departure)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Понедельник <br>Monday</td>
-                    <td>19:00 → 23:00</td>
-                    <td>15:00 → 19:00</td>
-                </tr>
-                <tr>
-                    <td>Вторник <br>Tuesday</td>
-                    <td>19:00 → 23:00</td>
-                    <td>15:00 → 19:00</td>
-                </tr>
-                <tr>
-                    <td>Среда <br> Wednesday</td>
-                    <td>19:00 → 23:00</td>
-                    <td>15:00 → 19:00</td>
-                </tr>
-                <tr>
-                    <td>Четверг <br>Thursday</td>
-                    <td>14:00 → 18:00</td>
-                    <td>09:00 → 13:00</td>
-                </tr>
-                <tr>
-                    <td>Пятница <br>Friday</td>
-                    <td>19:00 → 23:00</td>
-                    <td>15:00 → 19:00</td>
-                </tr>
-                <tr>
-                    <td>Суббота <br>Saturday</td>
-                    <td>19:00 → 23:00</td>
-                    <td>15:00 → 19:00</td>
-                </tr>
-                <tr>
-                    <td>Воскресенье <br> Sunday </td>
-                    <td>19:00 → 23:00</td>
-                    <td>15:00 → 19:00</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="spoiler">
+            <div class="spoiler-header">⏱️ Время поездки // Time</div>
+            <div class="spoiler-content">
+                <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>День недели // Weekday</th>
+                            <th>Moscow time <br>Посадка (boarding) → Отправление (departure)</th>
+                            <th>Server Time <br>Посадка (boarding) → Отправление (departure)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Понедельник <br>Monday</td>
+                            <td>19:00 → 23:00</td>
+                            <td>15:00 → 19:00</td>
+                        </tr>
+                        <tr>
+                            <td>Вторник <br>Tuesday</td>
+                            <td>19:00 → 23:00</td>
+                            <td>15:00 → 19:00</td>
+                        </tr>
+                        <tr>
+                            <td>Среда <br> Wednesday</td>
+                            <td>19:00 → 23:00</td>
+                            <td>15:00 → 19:00</td>
+                        </tr>
+                        <tr>
+                            <td>Четверг <br>Thursday</td>
+                            <td>14:00 → 18:00</td>
+                            <td>09:00 → 13:00</td>
+                        </tr>
+                        <tr>
+                            <td>Пятница <br>Friday</td>
+                            <td>19:00 → 23:00</td>
+                            <td>15:00 → 19:00</td>
+                        </tr>
+                        <tr>
+                            <td>Суббота <br>Saturday</td>
+                            <td>19:00 → 23:00</td>
+                            <td>15:00 → 19:00</td>
+                        </tr>
+                        <tr>
+                            <td>Воскресенье <br> Sunday </td>
+                            <td>19:00 → 23:00</td>
+                            <td>15:00 → 19:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
         
-        <h2>Правила поездки на поезде (RU):</h2>
-        <ol>
-            <li>Не садиться в вагон, если в нем уже заняты все пять мест.</li>
-            <li>С понедельника по пятницу садимся по расписанию. В Субботу и Воскресенье садимся кто хочет (рандом).</li>
-            <li>При посадке отдаем минимум 3 билета по будням и 1 билет по выходным.</li>
-            <li>Если ты сел не по расписанию и мест в вагоне не хватает, то пересядь в вагон, где есть места. Не пересел - красная карточка.</li>
-            <li>Если ты сел не по расписанию и мест нет во всем поезде - красная карточка.</li>
-            <li>При получении второй красной карточки в течение недели, снимаем тебя с поезда через временное изгнание из альянса. Заявка на вступление принимается сразу</li>
-        </ol>
-        <h2>Train travel rules (EN):</h2>
-<ol>
-    <li>Do not board a car if all five seats are already taken.</li>
-    <li>From Monday to Friday we board according to the schedule. On Saturday and Sunday, anyone can board (random).</li>
-    <li>Upon boarding, we give at least 3 tickets on weekdays and 1 ticket on weekends.</li>
-    <li>If you boarded not according to schedule and there are not enough seats in the car, then move to a car that has seats. If you don't move - red card.</li>
-    <li>If you boarded not according to schedule and there are no seats in the entire train - red card.</li>
-    <li>Upon receiving a second red card within a week, we remove you from the train through temporary exile from the alliance. Reapplication for membership is accepted immediately.</li>
-</ol>
+        <div class="spoiler">
+            <div class="spoiler-header">📝 Правила поездки на поезде (RU):</div>
+            <div class="spoiler-content">
+                <ol>
+                    <li>Не садиться в вагон, если в нем уже заняты все пять мест.</li>
+                    <li>С понедельника по пятницу садимся по расписанию. В Субботу и Воскресенье садимся кто хочет (рандом).</li>
+                    <li>При посадке отдаем минимум 3 билета по будням и 1 билет по выходным.</li>
+                    <li>Если ты сел не по расписанию и мест в вагоне не хватает, то пересядь в вагон, где есть места. Не пересел - красная карточка.</li>
+                    <li>Если ты сел не по расписанию и мест нет во всем поезде - красная карточка.</li>
+                    <li>При получении второй красной карточки в течение недели, снимаем тебя с поезда через временное изгнание из альянса. Заявка на вступление принимается сразу</li>
+                </ol>
+            </div>
+        </div>
+        <div class="spoiler">
+            <div class="spoiler-header">📝 Train travel rules (EN):</div>
+            <div class="spoiler-content">
+                <ol>
+                    <li>Do not board a car if all five seats are already taken.</li>
+                    <li>From Monday to Friday we board according to the schedule. On Saturday and Sunday, anyone can board (random).</li>
+                    <li>Upon boarding, we give at least 3 tickets on weekdays and 1 ticket on weekends.</li>
+                    <li>If you boarded not according to schedule and there are not enough seats in the car, then move to a car that has seats. If you don't move - red card.</li>
+                    <li>If you boarded not according to schedule and there are no seats in the entire train - red card.</li>
+                    <li>Upon receiving a second red card within a week, we remove you from the train through temporary exile from the alliance. Reapplication for membership is accepted immediately.</li>
+                </ol>
+            </div>
+        </div>
     </div>
-    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQu-YcQ62EvMSldP0PvrZh98MFEZtin8PIwonA7L8dgfQgvt8pwI2bNaXgSs1yiaorvxBwvkRGFkPTj/pubhtml?widget=true&amp;headers=false"></iframe>
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQu-YcQ62EvMSldP0PvrZh98MFEZtin8PIwonA7L8dgfQgvt8pwI2bNaXgSs1yiaorvxBwvkRGFkPTj/pubhtml?widget=true&headers=false"></iframe>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const spoilers = document.querySelectorAll('.spoiler');
+            spoilers.forEach(spoiler => {
+                const header = spoiler.querySelector('.spoiler-header');
+                header.addEventListener('click', () => {
+                    spoiler.classList.toggle('open');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
